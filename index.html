@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FixIt — Understand. Investigate. Verify.</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Top Navigation -->
+  <header class="navbar">
+    <div class="logo">Fix<span>It</span></div>
+    <nav class="nav-links">
+      <a href="#workflow">How it works</a>
+      <a href="#diagnostics">Diagnostics</a>
+      <a href="#download" class="btn-outline">Get MVP</a>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <main class="hero">
+    <span class="badge">Windows PC Diagnostics Companion</span>
+    <h1>Understand. Investigate. <span>Verify.</span></h1>
+    <p class="subtitle">
+      Stop guessing with random forum fixes. Diagnose Windows crashes, slowdowns, 
+      and driver conflicts with structured, transparent checks.
+    </p>
+    <div class="hero-actions">
+      <a href="#download" class="btn-primary">Download for Windows</a>
+      <a href="#workflow" class="btn-secondary">Explore Workflow</a>
+    </div>
+  </main>
+
+  <!-- Core 3-Step Grid -->
+  <section id="workflow" class="pillars">
+    <div class="card">
+      <div class="step">01</div>
+      <h3>Understand</h3>
+      <p>Capture clear system snapshots—event logs, hardware thermals, and active processes—in plain language.</p>
+    </div>
+
+    <div class="card">
+      <div class="step">02</div>
+      <h3>Investigate</h3>
+      <p>Trace root causes across drivers, startup services, and Windows updates without digging through raw menus.</p>
+    </div>
+
+    <div class="card">
+      <div class="step">03</div>
+      <h3>Verify</h3>
+      <p>Confirm that the fix actually worked with before-and-after benchmarks and stability checks.</p>
+    </div>
+  </section>
+  <!-- Interactive Diagnostic Platform -->
+  <section id="diagnostics" class="diag-box">
+    <div class="diag-header">
+      <h2>Diagnostic Workspace</h2>
+      <p>Search or pick a Windows symptom, run the checks, and log your verified fix.</p>
+    </div>
+
+    <!-- Search Bar -->
+    <input
+      type="text"
+      id="searchInput"
+      class="search-input"
+      placeholder="Search symptoms (e.g. wifi, cpu, bsod, disk, startup)..."
+    />
+
+    <!-- Symptom Tabs (Generated dynamically by app.js) -->
+    <div class="symptom-tabs" id="symptomTabs"></div>
+
+    <div class="diag-panel">
+      <div class="stage">
+        <span class="stage-label">01 · Understand</span>
+        <p id="understandText"></p>
+      </div>
+
+      <div class="stage">
+        <span class="stage-label">02 · Investigate <span id="progressText"></span></span>
+        <ul id="checkList" class="checklist"></ul>
+      </div>
+
+      <div class="stage verify-section">
+        <span class="stage-label">03 · Verify</span>
+        <p id="verifyText" class="muted"></p>
+
+        <div class="verify-controls">
+          <input
+            type="text"
+            id="noteInput"
+            class="note-input"
+            placeholder="Optional note (e.g. Updated Intel Wi-Fi driver v23.4)..."
+          />
+          <button id="verifyBtn" class="btn-primary" disabled>Mark Verified</button>
+        </div>
+      </div>
+
+      <div id="verifyResult" class="verify-result hidden"></div>
+    </div>
+
+    <!-- Saved Diagnostic History -->
+    <div class="history-box">
+      <div class="history-header">
+        <h3>Recent Diagnostic Logs</h3>
+        <div class="history-actions">
+          <button id="exportBtn" class="btn-outline">Export .txt</button>
+          <button id="clearHistoryBtn" class="btn-outline">Clear</button>
+        </div>
+      </div>
+      <ul id="historyList" class="history-list"></ul>
+    </div>
+  </section>
+  
+
+</body>
+</html>
